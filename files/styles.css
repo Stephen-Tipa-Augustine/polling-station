@@ -1,0 +1,461 @@
+.selector-for-some-widget {
+  box-sizing: content-box;
+}
+.grid-container {
+    display: compact;
+}
+
+.header {
+    background-color: #bbccdd;
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #F1F1F1;
+    text-align: center;
+    padding: 10px;
+}
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    height: auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.likes-comments {
+    overflow: hidden;
+    height: auto;
+    background-color: #888888;
+    width: 100%;
+    display: inline-block;
+    font-family: Arial, Helvetica,sans-serif;
+}
+
+.likes-comments .likes-a {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    color: #cc1111;
+}
+
+.likes-comments .likes-a:hover {
+    color: #f1f1f1;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.topnav a:hover {
+    background-color: #4CAF50;
+    color: black;
+}
+body{
+  background-color: #5b80b2 ;
+  background-repeat-y: no-repeat;
+  color: black;
+  text-align: center;
+    background-color: hsl(45, 30%, 80%);
+    font-family: Arial, Verdana, sans-serif;
+}
+body *{
+  font-family: Arial, Verdana, sans-serif;
+}
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
+  margin: 0;
+}
+p {
+    font-weight: normal;
+    text-decoration: none;
+}
+a, a:hover, a:visited{
+  color: #fff;
+  text-decoration: none;
+}
+* {
+ font-family: Arial, Verdana, sans-serif;
+ text-align: center;}
+#nav, #feature, .article, #footer, #wrapper {
+ background-color: yellowgreen;
+ margin-top: 20px;
+ padding: 10px 0px 5px 0px;
+ color: steelblue;
+ border: 5px steelblue;
+}
+#feature, .article {
+ height: 100px;}
+li {
+ display: inline;
+ padding: 5px;}
+
+.row {
+    background-color: wheat;
+    border: 1px solid #665544;
+    padding: 1px;
+    background-color: hsl(20, 20%, 80%);
+    width: 98%;
+    margin-left: 1%;
+
+
+
+}
+#header {
+    background-color:  #5b80b2;
+    border: 2px solid #665544;
+    padding: 1px;
+    background-color: hsl(20, 20%, 80%);
+    width: 99%;
+    margin-left: 2%;
+    float: inside;
+    position: center;
+}
+.nav-list, .dd-a {
+    margin-top: 2px;
+    color: cornflowerblue;
+    display: block;
+    font-weight: bold;
+}
+.dd-a:hover {
+    background: #19865C;
+}
+
+hr {
+    border: 5px solid grey;
+}
+
+.col-sm-1, .col-sm-2, .nav-a{
+    display: block;
+    font-weight: bold;
+    border: 5px powderblue ;
+    padding: auto;
+}
+.nav-a:hover, .div-a:hover {
+    background: darkslateblue;
+    border: 5px rosybrown;
+}
+.nav-a:active, .div-a:active {
+    background: #4285F4;
+    border: 5px yellowgreen;
+}
+
+.div-a::inactive-selection {
+    background: #79aec8;
+    border: 5px yellowgreen;
+}
+nav {
+    margin: 0 7px 5px -30px;
+    float: inside;
+    position: relative;
+}
+.div-a {
+    display: block;
+    border: 5px burlywood;
+    color: red;
+}
+div a {
+    color: #993333;
+}
+
+.side-detail {
+    margin-top: 4%;
+    margin-left: 20.1%;
+    width: 79.5%;
+    text-align: center;
+}
+
+.content {
+    position: page;
+}
+
+.vertical-list {
+    list-style-type: none;
+    top: 8%;
+    margin-top: 0;
+    margin: 0;
+    padding: 0;
+    width: 20%;
+    height: 100%;
+    position: fixed;
+    overflow: auto;
+    background-color: #f1f1f1;
+    border: 1px solid #555;
+}
+.vertical-list li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-align: center;
+    border-bottom: 1px solid #555;
+}
+li a:hover{
+    background-color: #555;
+    color: #bbccdd;
+}
+li a:active {
+    background-color: #4CAF50;
+    color: #bbccdd;
+}
+li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: relative;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.dropdown-content a:hover {
+    background-color: #4285F4;
+}
+
+.dropdown-content a:active {
+    background-color: #79aec8;
+    color: rebeccapurple;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+li .dropdown {
+    display: inline-block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #575757;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
+    background-color: #4CAF50;
+}
+
+select {
+    width: auto;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+}
+
+textarea {
+    width: auto;
+    height: auto;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+.enroll-form {
+    margin-top: 10%;
+    border: 1px solid #464646;
+    padding: 16px 20px;
+}
+
+.enroll-form input, .enroll-form textarea, .enroll-form image {
+    display: compact;
+    padding: 10px;
+    margin-left: 0;
+}
+
+.enroll-form * {
+    position: relative;
+    text-align: left;
+}
+
+.lonely-a {
+    background-color: #464646;
+    display: block;
+    border: 2px solid #5E5694;
+    padding: 12px 20px;
+    width: available;
+}
+
+.lonely-a:hover {
+    background-color: #4CAF50;
+}
+
+.muk-logo {
+    width: auto;
+    height: 2%;
+}
+
+.image-container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.image-container .image-title {
+    position: absolute;
+    left: 50%;
+    color: red;
+    transform: translate(-50%, -50%);
+    top: 8px;
+}
+
+.details {
+    color: #5E5694;
+    padding: auto;
+    margin-left: 10px;
+}
+
+.details-label {
+    margin-left: 20px;
+    color: black;
+}
+
+.feed-back-content {
+    background-color: #bbccdd;
+    display: block;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+
+}
+
+.comment-content {
+    display: none;
+    background-color: #ddffdd;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 60%;
+    float: right;
+}
+
+.comment-contents {
+    display: block;
+    background-color: #ddffdd;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 60%;
+    float: right;
+}
+
+.feed-back-content .time, .comment-content .time {
+    text-align: left;
+}
+
+.feed-back-content::after, .comment-content::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.feed-back-content img, .comment-content img {
+    float: left;
+    max-width: 60px;
+    width: 100%;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+.time-right {
+    float: right;
+    color: #4CAF50;
+}
+
+.post-comment {
+    float: left;
+    color: #464646;
+}
+
+.post-comment textarea, .post-comment button {
+    display: inline-block;
+}
+
+.open-button, .like-buttons {
+    background-color: #4CAF50;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0.8;
+    font-family: sans-serif;
+}
+
+.form-popup {
+    display: none;
+    position: page;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+    margin-right: 50%;
+    align-items: center;
+}
+
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+.form-container textarea, .form-container input {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    background: #f1f1f1;
+}
+
+.form-container textarea:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.form-container .post-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.form-container .cancel-btn {
+    background-color: red;
+}
+
+.form-container .open-button:hover, .post-btn:hover {
+    opacity: 1;
+}

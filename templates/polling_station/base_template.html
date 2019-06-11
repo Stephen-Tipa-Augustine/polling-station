@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {%load static from staticfiles%}
+      <link rel="stylesheet" href="{% static 'styles.css'%}">
+    <script type="text/javascript" src="{% static 'script.js' %}"></script>
+    <title>Polling Station</title>
+  </head>
+  <body>
+  <div class="grid-container">
+    <div class="grid-container1">
+      <div class="topnav">
+          <a href="{% url 'homepage' %}" class="active"> Homepage </a>
+          <a href="{% url 'candidate:homepage' %}" class="active"> candidates </a>
+          <a href="{% url 'votting:homepage' %}" class="active"> vote </a>
+          <a href="{% url 'student:posts' %}" class="active"> posts </a>
+          <a href="{% url 'student:feedback' %}" class="active"> feedback forum </a>
+          <a href="{% url 'student:profile' %}" class="active"> Profile </a>
+          <div class="dropdown">
+            <a href="#" class="dropbtn">Account</a>
+            <div class="dropdown-content">
+            <a href="{% url 'student:logout' %}" color="red"><strong>Log Out</strong></a>
+          </div>
+          </div>
+      </div>
+
+    </div>
+    <div class="content">
+      <div class="side-nav">
+      {% block side-nav %}
+
+      {% endblock %}
+
+    </div>
+      <div class="side-detail">
+      <img src="/media/muk-logo.jpg" class="muk-logo" alt="Makerere" />
+      {%block content%}
+
+
+      {%endblock%}
+
+       <hr />
+    <div>
+      <form action="{% url 'student:comment' %}" method="POST" class="comment-class">
+        {% csrf_token %}
+        <p><b>We will love your feedback, so please consider filling the below form</b></p>
+        <textarea id="comment-input" cols="40" rows="3" name="comment">Please Enter Your comment here...</textarea>
+         <button type="submit">Submit Comment</button>
+    </form>
+    </div>
+    <hr />
+    <footer>
+      <p><b>Privacy And Agreement Policies</b></p>
+      <p>This Program is developed purposely for the intended use by Makerere university for other uses and parties
+      please seek the developers consent</p>
+      <strong>Developed by <b>STKS</b></strong>
+    </footer>
+
+    </div>
+    </div>
+
+  </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  </body>
+</html>

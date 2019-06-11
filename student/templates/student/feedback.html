@@ -1,0 +1,14 @@
+{% extends 'student/base.html' %}
+
+{% block content %}
+<h1>Feedback</h1>
+    {% for comment in comments %}
+        <div class="feed-back-content">
+            <h3 style="text-align: left">{{ comment.user }}</h3>
+            <p>{{ comment.comment }}</p>
+            <span class="time-right">
+                {{ comment.time }}
+            </span>
+        </div>
+    {% endfor %}
+{% endblock %}
