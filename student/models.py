@@ -41,7 +41,10 @@ class Comment(models.Model):
         return self.comment[:100]+'...'
 
 class Posts(models.Model):
+    key = models.CharField(max_length=100, help_text='pk1', default='', primary_key=True)
+    keyComment = models.CharField(max_length=100, help_text='pk2', default='')
     photo = models.ImageField(blank=True, default='default.jpg', help_text='Your Image')
+    userPhoto = models.ImageField(blank=True, default='default.jpg', help_text='Your Image')
     post = models.TextField(help_text='Your post')
     user = models.ForeignKey(User, default=None, on_delete=models.PROTECT)
     time = models.DateTimeField(auto_now_add=True)

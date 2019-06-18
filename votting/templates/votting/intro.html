@@ -1,5 +1,74 @@
 {% extends 'votting/base.html'%}
 
 {% block content %}
-<h1>This is the votting section</h1>
+
+<script type="text/javascript">
+
+</script>
+
+<h1>This is the section that concerns votes</h1>
+<p>Brief Statistics of Candidates this academic year</p>
+<table>
+    <tr>
+        <th colspan="5" onclick="voteDetails('vote-details')">No of Colleges</th>
+        <td onclick="voteDetails('vote-details')">Nine(9)</td>
+        <div class="vote-details" id="vote-details">
+            <button type="button" onclick="voteDetails('vote-details')" style="display: block; background-color: red; color: white">
+                Exit</button>
+            <p>colleges</p>
+            <p>colleges</p>
+            <p>colleges</p>
+            <p>colleges</p>
+        </div>
+
+    </tr>
+    <tr>
+        <th colspan="5" onclick="voteDetails('vote-detail1')">Total number of posts</th>
+        <td onclick="voteDetails('vote-detail1')">Undefined</td>
+        <div class="vote-details" id="vote-detail1">
+            <button type="button" onclick="voteDetails('vote-detail1')" style="display: block; background-color: red; color: white">
+                Exit</button>
+            <p>colleges</p>
+            <p>colleges</p>
+            <p>colleges</p>
+            <p>colleges</p>
+        </div>
+    </tr>
+    <tr>
+        <th colspan="5" onclick="voteDetails('vote-detail2')">Number of Contestants</th>
+        <td onclick="voteDetails('vote-detail2')">{{ total_number }}</td>
+        <div class="vote-details" id="vote-detail2">
+            <button type="button" onclick="voteDetails('vote-detail2')" style="display: block; background-color: red; color: white">
+                Exit</button>
+            <p>colleges</p>
+            <p>colleges</p>
+            <p>colleges</p>
+            <p>colleges</p>
+        </div>
+    </tr>
+    <tr>
+        <th colspan="5" onclick="voteDetails('vote-detail3')">Currently Nominated by Students</th>
+        <td onclick="voteDetails('vote-detail3')">{{ l_nominated }}</td>
+        <div class="vote-details" id="vote-detail3">
+            <button type="button" onclick="voteDetails('vote-detail3')" style="display: block; background-color: red; color: white">
+                Exit</button>
+            <p>colleges</p>
+            <p>colleges</p>
+            <p>colleges</p>
+            <p>colleges</p>
+        </div>
+    </tr>
+    <tr>
+        <th colspan="5" onclick="voteDetails('vote-detail4')">Yet to be nominated by Students</th>
+        <td>{{ l_nonNominated }}</td>
+        <div class="vote-details" id="vote-detail4">
+            <button type="button" name="vote-detail4" onclick="voteDetails(this.name)" style="display: block; background-color: red; color: white">
+                Exit</button>
+            <p>colleges</p>
+            <p>colleges</p>
+            <p>colleges</p>
+            <p>colleges</p>
+        </div>
+    </tr>
+</table>
 {% endblock %}

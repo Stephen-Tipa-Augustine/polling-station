@@ -7,9 +7,17 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    {%load static from staticfiles%}
+      <link rel="stylesheet" href="https://cdngs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      {%load static from staticfiles%}
       <link rel="stylesheet" href="{% static 'styles.css'%}">
     <script type="text/javascript" src="{% static 'script.js' %}"></script>
+
+    <script type="text/javascript">
+
+
+
+    </script>
+
     <title>Polling Station</title>
   </head>
   <body>
@@ -22,14 +30,17 @@
           <a href="{% url 'student:posts' %}" class="active"> posts </a>
           <a href="{% url 'student:feedback' %}" class="active"> feedback forum </a>
           <a href="{% url 'student:profile' %}" class="active"> Profile </a>
-          <div class="dropdown">
-            <a href="#" class="dropbtn">Account</a>
-            <div class="dropdown-content">
-            <a href="{% url 'student:logout' %}" color="red"><strong>Log Out</strong></a>
-          </div>
-          </div>
-      </div>
+        <div class="action-button">
+          <button class="three-bar1" onclick="actionButton()">
+          <span ><b>---</b></span>
+          <br />
+          <span ><b>---</b></span>
+          <br />
+          <span ><b>---</b></span>
+          </button>
 
+        </div>
+      </div>
     </div>
     <div class="content">
       <div class="side-nav">
@@ -39,6 +50,17 @@
 
     </div>
       <div class="side-detail">
+          <div class="action-button-content" id="action-button" >
+              <span>
+                  <img id="action-image" src="{{ details.photo.url }}" alt="profile">
+                  <p style="float: inside; display: block">Logged In As</p>
+              </span>
+              <b><p style="display: block; text-decoration: none; text-align: center">{{details.full_name}}</p></b>
+              <a href="{% url 'student:logout' %}" color="red"><strong>Love You</strong></a>
+              <a href="{% url 'student:logout' %}" color="red"><strong>Settings</strong></a>
+              <a href="{% url 'student:logout' %}" color="red"><strong>Account</strong></a>
+              <a href="{% url 'student:logout' %}" color="red"><strong>Log Out</strong></a>
+          </div>
       <img src="/media/muk-logo.jpg" class="muk-logo" alt="Makerere" />
       {%block content%}
 
@@ -51,7 +73,7 @@
         {% csrf_token %}
         <p><b>We will love your feedback, so please consider filling the below form</b></p>
         <textarea id="comment-input" cols="40" rows="3" name="comment">Please Enter Your comment here...</textarea>
-         <button type="submit">Submit Comment</button>
+         <button type="submit" onclick="alertNotice()">Submit Comment</button>
     </form>
     </div>
     <hr />

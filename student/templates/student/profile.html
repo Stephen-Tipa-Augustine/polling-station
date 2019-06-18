@@ -4,20 +4,21 @@
 <hr />
 <h1>Student Profile</h1>
 <hr />
-<div class="image-container">
-    <img src="{{details.photo.url}}" alt="Profile">
-    <div class="image-title">Your Profile Picture</div>
+    <div class="image-container">
+        <img src="{{details.photo.url}}" alt="Profile">
+        <div class="image-title">Your Profile Picture</div>
+    </div>
+<div>
+    <p><b class="details-label">Student's full name:</b> <b class="details">{{details.full_name}}</b></p>
+    <p><b class="details-label">Your College:</b> <b class="details">{{details.college}}</b></p>
+    <p><b class="details-label">Your Department:</b> <b class="details">{{details.department}}</b></p>
+    <p><b class="details-label">Your Program:</b> <b class="details">{{details.program}}</b></p>
+    <p><b class="details-label">Year Of Study:</b> <b class="details">{{details.year_of_study}}</b></p>
+    <p><b class="details-label">Your Registration Number:</b> <b class="details">{{details.reg_no}}</b></p>
+    <p><b class="details-label">Your Student Number:</b> <b class="details">{{details.student_no}}</b></p>
+    <p><b class="details-label">Your Birthday:</b> <b class="details">{{details.date_of_birth}}</b></p>
+    <p><b class="details-label">Your Email Address:</b> <b class="details">{{details.email}}</b></p>
+    <p><b class="details-label">Your Mobile Number:</b> <b class="details">{{details.mobile}}</b></p>
+    <p><b class="details-label">Your Phone Number:</b> <b class="details">{{details.phone}}</b></p>
 </div>
-<p><b class="details-label">Student's full name:</b> <b class="details">{{details.full_name}}</b></p>
-<p><b class="details-label">Your College:</b> <b class="details">{{details.college}}</b></p>
-<p><b class="details-label">Your Department:</b> <b class="details">{{details.department}}</b></p>
-<p><b class="details-label">Your Program:</b> <b class="details">{{details.program}}</b></p>
-<p><b class="details-label">Year Of Study:</b> <b class="details">{{details.year_of_study}}</b></p>
-<p><b class="details-label">Your Registration Number:</b> <b class="details">{{details.reg_no}}</b></p>
-<p><b class="details-label">Your Student Number:</b> <b class="details">{{details.student_no}}</b></p>
-<p><b class="details-label">Your Birthday:</b> <b class="details">{{details.date_of_birth}}</b></p>
-<p><b class="details-label">Your Email Address:</b> <b class="details">{{details.email}}</b></p>
-<p><b class="details-label">Your Mobile Number:</b> <b class="details">{{details.mobile}}</b></p>
-<p><b class="details-label">Your Phone Number:</b> <b class="details">{{details.phone}}</b></p>
-
 {% endblock %}

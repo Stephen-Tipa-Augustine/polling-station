@@ -1,0 +1,48 @@
+{% extends 'student/posts' %}
+
+{% block postCommentsLikes %}
+    <div class="comment-content" id="popComments">
+                    <div>
+                        <span>
+                            <button onclick="closeComments()" style="float: left; background-color: red" class="like-buttons">
+                                Hide Comments</button>
+                        <p style="float: none; margin-top: 0; text-align: center; text-decoration: none">
+                    <b><u>Comments On This Post:</u></b></p>
+                    </span>
+                    </div>
+                    {% for comment in comments %}
+                    {% if post.post == comment.post %}
+                    <div class="comment-contents">
+                        <img src="{{ comment.photo.url }}" alt="profile" />
+                        <h3 style="text-align: left">{{ comment.user }}</h3>
+                        <p>{{ comment.comment }}</p>
+                        <span class="time-right">
+                    {{ comment.time }}
+                    </span>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+
+        <div class="comment-content" id="popLikes">
+            <div>
+                <span>
+                    <button onclick="closeLikes()" style="float: left; background-color: red" class="like-buttons">
+                    Hide Likes</button>
+                    <p style="float: none; margin-top: 0; text-align: center; text-decoration: none">
+                    <b><u>Post Likes</u></b></p>
+                </span>
+            </div>
+            {% for like in likes %}
+            {% if post.post == like.post %}
+                    <div class="comment-contents">
+                        <img src="{{ like.photo.url }}" alt="profile" />
+                        <h3 style="text-align: left">{{ like.user }}</h3>
+                        <span class="time-right">
+                        {{ like.time }}
+                        </span>
+                    </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+{% endblock %}

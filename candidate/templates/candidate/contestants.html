@@ -1,0 +1,46 @@
+{% extends 'candidate/base.html' %}
+
+{% block content %}
+<h1>The Contestants</h1>
+<hr />
+{% if length == 0 %}
+
+    <h2 style="color: red">
+        <b>Hey dear! Currently we do not have entries in thsi section yet, but very soon we will</b>
+    </h2>
+
+{% else %}
+
+<table class="contestant-image">
+     <thead>
+     <tr>
+            <th colspan="7">Full Name</th>
+            <th>Sex</th>
+            <th>College</th>
+            <th colspan="4">Department</th>
+            <th>Program</th>
+            <th>Year of study</th>
+            <th>post</th>
+            <th colspan="4">Contestant Image</th>
+     </tr>
+     </thead>
+        <tbody>
+        {% for contestant in contestants %}
+        <tr>
+            <td colspan="7">{{ contestant.full_name }}</td>
+            <td>{{ contestant.sex }}</td>
+            <td>{{ contestant.college }}</td>
+            <td colspan="4">{{ contestant.department }}</td>
+            <td>{{ contestant.program }}</td>
+            <td>{{ contestant.year_of_study }}</td>
+            <td>{{ contestant.post }}</td>
+            <td colspan="4"><span> <img src="{{ contestant.photo.url }}" id="contestant-image"
+                                             style="width: 100px" alt="Image"> </span></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+</table>
+
+{% endif %}
+
+{% endblock %}

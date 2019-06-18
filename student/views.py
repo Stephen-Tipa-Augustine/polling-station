@@ -6,6 +6,8 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.core import serializers
+import json
 
 # Create your views here.
 @login_required(login_url='start')
@@ -13,6 +15,7 @@ def posts(request):
     l = models.Posts.objects.order_by('time')
     comments = models.PostComments.objects.order_by('time')
     likes = models.PostLikes.objects.order_by('time')
+    details = models.Profile.objects.get(student_no=request.user)
     o = len(likes)
     n = len(l)
     m = len(comments)
@@ -25,20 +28,22 @@ def posts(request):
         comment.append(comments[i])
     for i in range(o-1, -1, -1):
         like.append(l[i])
-    return render(request, 'student/posts.html', {'posts':post, 'comments':comment, 'likes':like})
+    return render(request, 'student/posts.html', {'details':details, 'posts':post, 'comments':comment, 'likes':like})
 @login_required(login_url='start')
 def feedback(request):
     comments = models.Comment.objects.all()
-    return render(request, 'student/feedback.html', {'comments':comments})
+    details = models.Profile.objects.get(student_no=request.user)
+    return render(request, 'student/feedback.html', {'comments':comments, 'details':details})
 @login_required(login_url='start')
 def profile(request):
-    details = models.Profile.objects.filter(student_no=request.user)
-    return render(request, 'student/profile.html', {'details':details[0]})
+    details = models.Profile.objects.get(student_no=request.user)
+    return render(request, 'student/profile.html', {'details':details})
 def start_page(request):
     return render(request, 'polling_station/start_page.html')
 @login_required(login_url='start')
 def home_page(request):
-    return render(request, 'polling_station/intro.html')
+    details = models.Profile.objects.get(student_no=request.user)
+    return render(request, 'polling_station/intro.html', {'details':details})
 def enrolled(request):
     return render(request, 'student/enrolled.html')
 def comment(request):
@@ -97,9 +102,17 @@ def logout_user(request):
 def make_post(request):
     if request.method == 'POST':
         form = forms.Post(request.POST, request.FILES)
+        details = models.Profile.objects.get(student_no=request.user)
         if form.is_valid():
             post = form.save(commit=False)
             post.user = request.user
+            post.userPhoto = details.photo
+            new = post.post[:20].split(' ')
+            new = '_'.join(new) + '_'
+            for i in "./,\n":
+                new = new.replace(i, '')
+            post.key = new + str(request.user)
+            post.keyComment = post.key + '_1'
             post.save()
     return redirect(request.META.get('HTTP_REFERER'))
 
@@ -141,7 +154,7 @@ def like_post(request, slug):
                         i.likes = True
                         i.save()
                         break
-        elif i == obj[n-1] and i.user != request.user:
+        elif i == obj[n-1] and i.post != str(slug):
             like = models.PostLikes()
             like.post = str(slug)
             like.likes = True

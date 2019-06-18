@@ -2,9 +2,9 @@
 
 {% block side-nav %}
     <ul class="vertical-list">
-        <h4>What do you wanna do?</h4>
-        <li> <a href="#" class="dd-a"><b>Guild</b></a> </li>
-        <li> <a href="#" class="dd-a"><b>GRC</b></a> </li>
-        <li> <a href="#" class="dd-a"><b>etc</b></a> </li>
+        <h4>What do you wanna see?</h4>
+        <li> <a href="{% url 'votting:nominated' %}" class="dd-a"><b>Nominated Candidates</b></a> </li>
+        <li> <a href="{% url 'votting:non-nominated' %}" class="dd-a"><b>Non-nominated Candidates</b></a> </li>
+        <li> <a href="{% url 'votting:vote' %}" class="dd-a"><b>vote</b></a> </li>
       </ul>
 {% endblock %}

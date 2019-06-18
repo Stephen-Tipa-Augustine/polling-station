@@ -1,0 +1,15 @@
+{% extends 'votting/base.html' %}
+
+{% block content%}
+<h3>We Will Show You Students Nominated By The Student Body</h3>
+{% if l_nonNominated == 0 %}
+    <h2 style="color: red">
+        We are sorry, as for now we have no data to display you for your current query.
+    </h2>
+{% else %}
+    {% for non_nominated in non_nominateds %}
+        <p>We got you</p>
+    {% endfor %}
+{% endif %}
+
+{% endblock %}

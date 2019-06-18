@@ -3,8 +3,8 @@
 {% block side-nav %}
     <ul class="vertical-list">
         <h4>What do you wanna do?</h4>
-        <li> <a href="#" class="dd-a"><b>Current leaders</b></a> </li>
-        <li> <a href="#" class="dd-a"><b>contestants</b></a> </li>
-        <li> <a href="#" class="dd-a"><b>History Of Leaders</b></a> </li>
+        <li> <a href="{% url 'candidate:current-cabinet' %}" class="dd-a"><b>Current leaders</b></a> </li>
+        <li> <a href="{% url 'candidate:current-contestants' %}" class="dd-a"><b>contestants</b></a> </li>
+        <li> <a href="{% url 'candidate:previous-cabinet' %}" class="dd-a"><b>History Of Leaders</b></a> </li>
       </ul>
 {% endblock %}
