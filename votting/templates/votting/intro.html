@@ -2,21 +2,40 @@
 
 {% block content %}
 
-<script type="text/javascript">
-
-</script>
-
 <h1>This is the section that concerns votes</h1>
 <p>Brief Statistics of Candidates this academic year</p>
 <table>
     <tr>
         <th colspan="5" onclick="voteDetails('vote-details')">No of Colleges</th>
-        <td onclick="voteDetails('vote-details')">Nine(9)</td>
+        <td onclick="voteDetails('vote-details')">09</td>
         <div class="vote-details" id="vote-details">
             <button type="button" onclick="voteDetails('vote-details')" style="display: block; background-color: red; color: white">
                 Exit</button>
-            <p>colleges</p>
-            <p>colleges</p>
+                <button type="button" style="bottom: 0; padding: 0 1px; width: auto; height: 10px; font-size: smaller;">+</button>
+                CEDAT
+            <div class="brief-detail-about-vote" id="college-cedat">
+                <h5><b>CEDAT:</b></h5>
+                <p>CEDAT:- In full this stands for College of Engineering, Design, Art And technology. <br />
+                This college have severall departments which includes;-
+                    <ul style="list-style: circle; text-align: center;">
+                <li>Department of Elecrical and Computer Engineering</li>
+                <li>Department of Mechanical Engineering</li>
+                <li>Department of Civil Engineering</li>
+            </ul>
+                </p>
+            </div>
+            <div onclick="collegeDetails('college-cobams')">COBAMS</div>
+             <div class="brief-detail-about-vote" id="college-cobams">
+                <h5><b >CEDAT:</b></h5>
+                <p>CEDAT:- In full this stands for College of Engineering, Design, Art And technology. <br />
+                This college have severall departments which includes;-
+                    <ul style="list-style: circle; text-align: center;">
+                <li>Department of Elecrical and Computer Engineering</li>
+                <li>Department of Mechanicla Engineering</li>
+                <li>Department of Civil Engineering</li>
+            </ul>
+                </p>
+            </div>
             <p>colleges</p>
             <p>colleges</p>
         </div>
@@ -24,7 +43,7 @@
     </tr>
     <tr>
         <th colspan="5" onclick="voteDetails('vote-detail1')">Total number of posts</th>
-        <td onclick="voteDetails('vote-detail1')">Undefined</td>
+        <td onclick="voteDetails('vote-detail1')">0</td>
         <div class="vote-details" id="vote-detail1">
             <button type="button" onclick="voteDetails('vote-detail1')" style="display: block; background-color: red; color: white">
                 Exit</button>
@@ -60,7 +79,7 @@
     </tr>
     <tr>
         <th colspan="5" onclick="voteDetails('vote-detail4')">Yet to be nominated by Students</th>
-        <td>{{ l_nonNominated }}</td>
+        <td onclick="voteDetails('vote-detail4')">{{ l_nonNominated }}</td>
         <div class="vote-details" id="vote-detail4">
             <button type="button" name="vote-detail4" onclick="voteDetails(this.name)" style="display: block; background-color: red; color: white">
                 Exit</button>

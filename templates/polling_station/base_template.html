@@ -28,8 +28,6 @@
           <a href="{% url 'candidate:homepage' %}" class="active"> candidates </a>
           <a href="{% url 'votting:homepage' %}" class="active"> vote </a>
           <a href="{% url 'student:posts' %}" class="active"> posts </a>
-          <a href="{% url 'student:feedback' %}" class="active"> feedback forum </a>
-          <a href="{% url 'student:profile' %}" class="active"> Profile </a>
         <div class="action-button">
           <button class="three-bar1" onclick="actionButton()">
           <span ><b>---</b></span>
@@ -56,9 +54,9 @@
                   <p style="float: inside; display: block">Logged In As</p>
               </span>
               <b><p style="display: block; text-decoration: none; text-align: center">{{details.full_name}}</p></b>
-              <a href="{% url 'student:logout' %}" color="red"><strong>Love You</strong></a>
-              <a href="{% url 'student:logout' %}" color="red"><strong>Settings</strong></a>
-              <a href="{% url 'student:logout' %}" color="red"><strong>Account</strong></a>
+              <a href="{% url 'student:feedback' %}" color="red"><strong>Feedback Forum</strong></a>
+              <a href="#" color="red"><strong>Settings</strong></a>
+              <a href="{% url 'student:profile' %}" color="red"><strong>Account</strong></a>
               <a href="{% url 'student:logout' %}" color="red"><strong>Log Out</strong></a>
           </div>
       <img src="/media/muk-logo.jpg" class="muk-logo" alt="Makerere" />
@@ -78,10 +76,15 @@
     </div>
     <hr />
     <footer>
-      <p><b>Privacy And Agreement Policies</b></p>
-      <p>This Program is developed purposely for the intended use by Makerere university for other uses and parties
+      <p><b style="display: inline-block;"> <a href="{% url 'student:privacy' %}" style="color: red; text-align: center;"><u>Privacy</u></a> And
+          <a href="{% url 'student:privacy' %}" style="color: red; text-align: center;"><u>Agreement</u></a> Policies.
+          <a href="{% url 'student:privacy' %}" style="color: red; text-align: center;"><u>Read</u></a></b></p>
+      <p>This Program is developed purposely for the intended use by
+          <a href="#" style="color: red; text-align: center;"><u>Makerere university</u></a> for other uses and parties
       please seek the developers consent</p>
-      <strong>Developed by <b>STKS</b></strong>
+      <strong>Developed by <b><a href="http://tipan-coders.simplesite.com" target="_blank" style="color: red; text-align: center;">
+          <u>STA-Tipan-Coders</u></a></b></strong>
+        <p style="color: #CC3434">Note: Clicking the above link will direct you to the Developer's Website on a new Window.</p>
     </footer>
 
     </div>

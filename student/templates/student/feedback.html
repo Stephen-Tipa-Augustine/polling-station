@@ -5,7 +5,7 @@
     {% for comment in comments %}
         <div class="feed-back-content">
             <span>
-                <img src="{{ details.photo.url }}" alt="">
+                <img id="feedback-image" src="{{ details.photo.url }}" alt="">
             </span>
             <h3 style="text-align: left">{{ comment.user }}</h3>
             <p>{{ comment.comment }}</p>

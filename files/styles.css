@@ -178,9 +178,9 @@ div a {
     position: page;
 }
 
-.vertical-list {
+.side-nav {
     list-style-type: none;
-    top: 8%;
+    top: 9.5%;
     margin-top: 0;
     margin: 0;
     padding: 0;
@@ -191,7 +191,7 @@ div a {
     background-color: #f1f1f1;
     border: 1px solid #555;
 }
-.vertical-list li a {
+.side-nav li a, .side-nav a {
     display: block;
     color: #000;
     padding: 8px 16px;
@@ -393,7 +393,7 @@ textarea {
     display: table;
 }
 
-.feed-back-content #profile, .comment-content img, .action-button-content span img {
+.feed-back-content #profile, .feed-back-content #feedback-image, .comment-content img, .action-button-content span img {
     float: left;
     max-width: 60px;
     width: 100%;
@@ -601,7 +601,7 @@ tr:hover {
     width: 250px;
     height: auto;
     position: relative;
-    left: 50%;
+    left: 0;
 }
 
 .post-photo img {
@@ -614,6 +614,20 @@ tr:hover {
 
 img:hover {
     cursor: pointer;
+}
+
+.brief-detail-about-vote {
+    display: none;
+    text-decoration: none;
+    text-align: left;
+    right: 0;
+    /*border: 1px solid black;*/
+    border-radius: 4px;
+    position: relative;
+    width: 90%;
+}
+.brief-detail-about-vote *{
+    text-align: left;
 }
 
 

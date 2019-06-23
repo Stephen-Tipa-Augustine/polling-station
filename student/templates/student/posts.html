@@ -43,7 +43,7 @@
 <div>Create a post on this site:
 <button type="button" class="open-button" onclick="openForm()">Create Post</button></div>
 <div class="form-popup" id="popForm">
-    <form action="{% url 'student:make_post' %}" class="form-container" enctype="multipart/form-data" method="POST">
+    <form action="{% url 'student:make_post' %}" class="form-container" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <h1>Create a Post</h1>
         <textarea name="post" id="post" cols="30" rows="10">Your post...</textarea>
@@ -52,10 +52,10 @@
         <button type="button" onclick="openInput()" class="open-button">Upload</button>
         </div>
         <div class="input-popup" id="popInput" style="display: none">
-            <input type="file" />
+            <label for="post-image-upload">Your Image: <input type="file" id="post-image-upload" /> </label>
             <button type="button" onclick="closeInput()" class="cancel-btn"><b>Cancel Upload</b></button>
         </div>
-        <button type="submit" class="post-btn">Post</button>
+        <input type="submit" class="post-btn" value="Post">
         <button type="button" class="cancel-btn" onclick="closeForm()">Close</button>
     </form>
 </div>
@@ -71,7 +71,7 @@
                 {{ post.time }}
             </span>
             <div class="post-photo">
-                <img src="{{ post.photo.url }}" style="width: 500px; height: auto" alt="profile" />
+                <img src="{{ post.photo.url }}" style="width: 500px; height: auto; margin-top: 10%;" alt="profile" />
             </div>
             <span class="likes-comments">
                 <button type="button" onclick="openLikes(this.name)" class="like-buttons" name={{ post.keyComment }}>Likes</button>({{ post.likes }})

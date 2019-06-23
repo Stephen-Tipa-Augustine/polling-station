@@ -32,3 +32,15 @@ function voteDetails(clickedId) {
             myView.style.display = 'block'
         }
 }
+
+function collegeDetails(clickedId) {
+        let myView = document.getElementById(clickedId)
+        if(myView.style.display === 'block')
+        {
+            myView.style.display = 'none'
+        }
+        else
+        {
+            myView.style.display = 'block'
+        }
+}

@@ -29,6 +29,8 @@ def posts(request):
     for i in range(o-1, -1, -1):
         like.append(l[i])
     return render(request, 'student/posts.html', {'details':details, 'posts':post, 'comments':comment, 'likes':like})
+def privacy(request):
+    return render(request, 'polling_station/terms.html')
 @login_required(login_url='start')
 def feedback(request):
     comments = models.Comment.objects.all()
@@ -75,9 +77,6 @@ def create_user(request):
             post = form.save(commit=False)
             user = post.save()
             login(request, user)
-            user_detail = models.Profile
-            user_detail.student_no = request.user
-            user_detail.save()
             return redirect('student:enrolled')
     else:
         form = UserCreationForm()
@@ -101,6 +100,9 @@ def logout_user(request):
 
 def make_post(request):
     if request.method == 'POST':
+        print(request.POST)
+        print("The image file")
+        print(request.FILES)
         form = forms.Post(request.POST, request.FILES)
         details = models.Profile.objects.get(student_no=request.user)
         if form.is_valid():
@@ -108,14 +110,20 @@ def make_post(request):
             post.user = request.user
             post.userPhoto = details.photo
             new = post.post[:20].split(' ')
+            new1 = str(post.time).split(' ')
+            new1 = '_'.join(new1) + '_'
             new = '_'.join(new) + '_'
             for i in "./,\n":
                 new = new.replace(i, '')
-            post.key = new + str(request.user)
+            for i in ":;./,\n":
+                new1 = new1.replace(i, '')
+            post.key = new + new1 + str(request.user)
             post.keyComment = post.key + '_1'
             post.save()
-    return redirect(request.META.get('HTTP_REFERER'))
-
+            return redirect(request.META.get('HTTP_REFERER'))
+    else:
+        form = forms.Post()
+    return redirect(request.META.get('HTTP_REFERER'), {'post_form':form})
 def post_comment(request, slug):
     if request.method == 'POST':
         form = forms.PostComment(request.POST)

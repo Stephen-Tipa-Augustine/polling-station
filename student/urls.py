@@ -33,5 +33,6 @@ urlpatterns = [
     path('create-a-user-account/', views.create_user, name='enroll1'),
     path('enrolled-thanks/', views.enrolled, name='enrolled'),
     path('log-out-current-user/', views.logout_user, name='logout'),
+    path('privacy-policies-and-agreement-terms/', views.privacy, name='privacy'),
 
 ]
