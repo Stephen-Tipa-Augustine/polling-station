@@ -25,7 +25,7 @@ SECRET_KEY = '@kw%d6i@4rtxr%@_d$4!)g9)72hto+cy-e-9t(#srn#5!+flc!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['tipan.pythonanywhere.com']
 
 
 # Application definition
@@ -57,7 +57,7 @@ ROOT_URLCONF = 'polling_station.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -79,11 +79,10 @@ WSGI_APPLICATION = 'polling_station.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'new_life',
-        'USER': 'root',
-        'HOST': '127.0.0.1',
-        'PASSWORD': '#1997ST$A&-_',
-        'PORT': '3306',
+        'NAME': 'tipan$polling_station',
+        'USER': 'tipan',
+        'HOST': 'tipan.mysql.pythonanywhere-services.com',
+        'PASSWORD': '##Loud1997*',
     }
 }
 
